@@ -1,0 +1,21 @@
+// See https://docs.sourcegraph.com/admin/external_service/github
+// and https://docs.sourcegraph.com/admin/repo/permissions#github
+// for details on configuring your own Github Enterprise instance to work with Sourcegraph.
+// This config will go into the code host config for Github Enterprise Server.
+
+{
+  "p4.port": "perforce.example.com:1666",
+  "p4.user": "admin",
+  "p4.passwd": "supersecretpassword",
+  "depots": [
+    "//depot-name/",
+  ],
+  "repositoryPathPattern": "perforce-fusion/{depot}",
+  "authorization": {
+    "subRepoPermissions": true
+  },
+  "fusionClient": {
+    "enabled": true,
+    "lookAhead": 2000
+  }
+}
